@@ -1,17 +1,29 @@
 <h1>Homepage</h1>
 
-<ul>
-  <% @timeline.each do |t| %>
-    <li>
-      <b><%= $twitter.status(t.id).text %></b>
-      <span><%= time_ago_in_words(t.created_at) %> ago</span><br /><br />
-    </li>
-  <% end %>
-</ul>
-
 <% if !current_user.nil? %>
-    <p>Click The link below to send a tweet.</p>
-    <%= link_to "Send a Tweet", new_tweet_path %>
-<% else %>
+  <p>
+    <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
+      <%= f.text_field :message %>
+      <%= f.submit "Send Tweet" %>
+    <% end %>
+  </p>
+  <% else %>
     <p>You must log in to send a tweet.</p>
 <% end %>
+
+
+<% @timeline.each do |t| %>
+  <blockquote class="twitter-tweet">
+    <p>
+      <b><%= link_to "#{t.user.name} @#{t.user.screen_name}", "http://www.twitter.com/#{t.user.screen_name}", target: "_blank" %></b><br />
+      <%= t.text %> -
+      <span><%= time_ago_in_words(t.created_at) %> ago</span><br />
+       Retweeted: <%= t.retweet_count %> Favorited: <%= t.favorite_count %>
+    </p>
+  </blockquote>
+<% end %>
+
+
+
+
+
