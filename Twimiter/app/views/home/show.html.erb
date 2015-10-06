@@ -1,8 +1,13 @@
 <h1>Homepage</h1>
 
-<% @timeline.each do |t| %>
-  <%= $twitter.status(t.id).text %><br /><br />
-<% end %>
+<ul>
+  <% @timeline.each do |t| %>
+    <li>
+      <b><%= $twitter.status(t.id).text %></b>
+      <span><%= time_ago_in_words(t.created_at) %> ago</span><br /><br />
+    </li>
+  <% end %>
+</ul>
 
 <% if !current_user.nil? %>
     <p>Click The link below to send a tweet.</p>
