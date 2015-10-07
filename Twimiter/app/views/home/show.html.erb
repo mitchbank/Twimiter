@@ -12,7 +12,8 @@
 <% end %>
 
 
-<% @timeline.each do |t| %>
+
+<% @tweets.each do |t| %>
   <blockquote class="twitter-tweet">
     <p>
       <b><%= link_to "#{t.user.name} @#{t.user.screen_name}", "http://www.twitter.com/#{t.user.screen_name}", target: "_blank" %></b><br />
