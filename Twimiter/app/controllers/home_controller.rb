@@ -13,15 +13,15 @@ class HomeController < ApplicationController
     end
 
     number_allowed = 1 
+    @twinty_one = []
     @twinty.each do |key, value| 
       # binding.pry 
-      if value.count > number_allowed 
-        value.pop(1)
-        # slice!(0..number_allowed)
+      # if value.count > number_allowed
+      @twinty_one << value.first
         # binding.pry 
-      end
+      # end
     end
-    @tweets = @twinty.values.flatten 
+    @tweets = @twinty_one.flatten 
     @tweets.sort_by do |tw|
       tw.id
     end
