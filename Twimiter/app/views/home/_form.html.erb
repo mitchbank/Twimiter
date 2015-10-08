@@ -1,9 +1,13 @@
 <%= form_tag home_path, method: :get do %>
-	<%= label_tag :t_limit, "Tweet Per Account Limit:" %>
+	<%= label_tag :t_limit, "Tweet Per Account Limit:" %> 
 	<%= number_field_tag :t_limit %>
+
+	<br />
 
 	<%= label_tag :s_limit, "Original Tweet Count:" %>
 	<%= number_field_tag :s_limit %>
 
-	<%= submit_tag %>
+	<br />
+
+	<%= submit_tag %> 
 <% end %>
