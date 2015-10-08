@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   resources :tweets, only: [:new, :create]
   resources :sessions, only: [:create, :destroy]
-  resource :home, only: [:show]
+  resources :home, only: [:show, :create]
 
   root to: 'home#show'
   # The priority is based upon order of creation: first created -> highest priority.

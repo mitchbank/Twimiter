@@ -1,5 +1,7 @@
 <h1>Homepage</h1>
 
+<%= render 'form' %>
+
 <% if !current_user.nil? %>
   <p>
     <%= form_for :tweet, url: tweets_path, method: :post do |f| %>

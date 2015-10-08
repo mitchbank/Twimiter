@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   def show
-    timeline = $twitter.home_timeline(count: 100)
+    @tweet_limit = params[:t_limit]
+    @scope_limit = params[:s_limit]
+    timeline = $twitter.home_timeline(count: @scope_limit.to_i)
     # @following = $twitter.user_timeline(count: 1)
 
     @twinty = {}
@@ -12,11 +14,10 @@ class HomeController < ApplicationController
       @twinty[user_id] << tweet
     end
 
-    number_allowed = 2 
     @twinty_one = []
     @twinty.each do |key, value| 
-      if value.count > number_allowed
-        @twinty_one << value.slice!(0..number_allowed-1)
+      if value.count > @tweet_limit.to_i
+        @twinty_one << value.slice!(0..@tweet_limit.to_i - 1)
       end
     end
     @tweets = @twinty_one.flatten 
@@ -26,5 +27,13 @@ class HomeController < ApplicationController
       # binding.pry
     end
     @tweets.reverse!
+  end
+
+  def create
+    if @options.save
+      redirect_to root_path
+    else 
+      flash.now[:alert] = "Invalid Entry"
+    end
   end
 end
