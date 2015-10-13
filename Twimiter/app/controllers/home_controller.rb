@@ -4,12 +4,4 @@ class HomeController < ApplicationController
 
    @tweets = limiter.limit
   end
-
-  def create
-    if @options.save
-      redirect_to root_path
-    else 
-      flash.now[:alert] = "Invalid Entry"
-    end
-  end
 end

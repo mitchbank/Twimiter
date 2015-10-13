@@ -1,11 +1,11 @@
 class Limiter
 	def initialize(t_limit, s_limit)
 		@t_limit = t_limit
-		@s_limit = s_limit
+		#@s_limit = s_limit
 	end
 
 	def limit
-		timeline = $twitter.home_timeline(count: @s_limit.to_i)
+		timeline = $twitter.home_timeline(count: 200)
 
 		twinty = {}
 		timeline.each do |tweet|
