@@ -18,10 +18,14 @@ class Limiter
 
 		twinty_one = []
 		twinty.each do |key, value| 
-		  if value.count > @t_limit.to_i
-			twinty_one << value.slice!(0..@t_limit.to_i - 1)
-		  end
+			tweet_stat = TweetStat.find_by(user_id: key.id, for_date: Date.today)
+			if tweet_stat
+			twinty_one << value.select do |tweet|
+		 	 tweet.retweet_count > tweet_stat.rt_per_tweet
+		 	end
+		  	end
 		end
+
 		tweets = twinty_one.flatten 
 		tweets.sort_by! do |tw|
 		  tw.created_at
