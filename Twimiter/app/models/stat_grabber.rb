@@ -1,6 +1,6 @@
 class StatGrabber
+
 	def self.run
-		
        current_user_id = 138536230 #current_user.user_id
 
        #Rails.logger.info "****** #{current_user_id}"
@@ -18,9 +18,9 @@ class StatGrabber
        		ts.save
        		#Rails.logger.info "****** #{ts}"
        end
-     
+
 	end
-		
+
        def self.rt_count_helper(id)
        		recent_tweets = $twitter.user_timeline(id, count: 100)
        		count = 0
