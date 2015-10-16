@@ -26,7 +26,7 @@ class Limiter
 
 		twinty_one = []
 		twinty.each do |key, value|
-			tweet_stat = TweetStat.find_by(user_id: key.id, for_date: Date.today.to_datetime)
+			tweet_stat = TweetStat.most_recent_for_user(key.id)
 			if tweet_stat
 				twinty_one << value.select do |tweet|
 		 			tweet.retweet_count > tweet_stat.rt_per_tweet
