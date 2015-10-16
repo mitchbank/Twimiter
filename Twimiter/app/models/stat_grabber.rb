@@ -1,28 +1,30 @@
 class StatGrabber
 
-	def self.run
-       current_user_id = 138536230 #current_user.user_id
+	def self.run(user)
+              begin
+                     twitter_client = user.twitter_client
+                     friends = twitter_client.friend_ids(user.uid.to_i)
+                     real_friends = friends.attrs[:ids]
 
-       #Rails.logger.info "****** #{current_user_id}"
+                     real_friends.each do |id|
+                            if TweetStat.where(for_date: Date.today.to_datetime, user_id: id).empty?
+              		     num_tweets = 100
+              		     num_rts = rt_count_helper(twitter_client, id)
 
-       friends = $twitter.friend_ids(current_user_id)
-       real_friends = friends.attrs[:ids]
+              		     ts = TweetStat.new(for_date: Date.today, user_id: id, num_tweets: num_tweets, num_rt: num_rts)
+              		     ts.save
+                            end
+                     end
+              rescue Twitter::Error::TooManyRequests => e
 
-       #Rails.logger.info "****** #{friends}"
+                  Rails.logger.error e.message
 
-       real_friends.each do |id|
-       		num_tweets = 100 #id.tweets_count.yesterday
-       		num_rts = rt_count_helper(id)
-
-       		ts = TweetStat.new(for_date: Date.today, user_id: id, num_tweets: num_tweets, num_rt: num_rts)
-       		ts.save
-       		#Rails.logger.info "****** #{ts}"
-       end
+              end
 
 	end
 
-       def self.rt_count_helper(id)
-       		recent_tweets = $twitter.user_timeline(id, count: 100)
+       def self.rt_count_helper(client, id)
+       		recent_tweets = client.user_timeline(id, count: 100)
        		count = 0
        		recent_tweets.each do |tweet|
        			count += tweet.retweet_count.to_i

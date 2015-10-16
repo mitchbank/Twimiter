@@ -27,7 +27,7 @@ gem 'twitter'
 gem 'omniauth-twitter'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'figaro'
 gem 'whenever', :require => false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

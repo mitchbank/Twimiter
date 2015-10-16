@@ -1,6 +1,12 @@
 $twitter = Twitter::REST::Client.new do |config|
-  config.consumer_key = 'gz3QrSj64QMbzQHV8uOu1xcjb'
-  config.consumer_secret = 'PixNURFoJ0yJQAdILf6kz9iFWNvQIa7DP2QZVRdHhxnLduBVuf'
-  config.access_token = '138536230-WJZpfLEuNuc7D33exhQXVSd8shDTRrUQqNwiLITq'
-  config.access_token_secret = 'nr7k6dQ23xfXsEGJLsi9h48ZL02apmUVB7Km4ogR5kdFy'
+  config.consumer_key = ENV['twitter_consumer_key']
+  config.consumer_secret = ENV['twitter_consumer_secret']
+  config.access_token = ENV['twitter_access_token']
+  config.access_token_secret = ENV['twitter_access_token_secret']
+  #config.access_token = oauth_token
+  #config.access_token_secret = oauth_secret
 end
+
+# Pusher.app_id = Figaro.env.pusher_app_id!
+# Pusher.key    = Figaro.env.pusher_key!
+# Pusher.secret = Figaro.env.pusher_secret!
