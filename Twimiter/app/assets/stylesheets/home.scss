@@ -11,7 +11,7 @@ blockquote.twitter-tweet {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   margin: 10px 5px;
   padding: 0 16px 16px 16px;
-  max-width: 468px;
+  max-width: 100%;
 }
 
 blockquote.twitter-tweet p {
@@ -21,7 +21,7 @@ blockquote.twitter-tweet p {
 }
 
 blockquote.twitter-tweet a {
-  color: inherit;
+  color: blue;
   font-weight: normal;
   text-decoration: none;
   outline: 0 none;

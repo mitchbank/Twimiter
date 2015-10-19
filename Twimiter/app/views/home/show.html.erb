@@ -1,6 +1,6 @@
 <h1>Homepage</h1>
 
-<%= render 'form' %>
+<!-- <%= render 'form' %> -->
 
 <% if !current_user.nil? %>
   <p>
@@ -22,14 +22,10 @@
     <blockquote class="twitter-tweet">
       <p>
         <b><%= link_to "#{t.user.name} @#{t.user.screen_name}", "http://www.twitter.com/#{t.user.screen_name}", target: "_blank" %></b><br />
-        <%= t.text %> -
+        <%= twitter_text(t.text) %> -
         <span><%= time_ago_in_words(t.created_at) %> ago</span><br />
         Retweeted: <%= t.retweet_count %> Favorited: <%= t.favorite_count %>
       </p>
     </blockquote>
   <% end %>
 <% end %>
-
-
-
-
