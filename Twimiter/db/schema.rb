@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013214155) do
+ActiveRecord::Schema.define(version: 20151022183226) do
 
   create_table "followings", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 20151013214155) do
     t.string   "name"
     t.string   "oauth_token"
     t.string   "oauth_secret"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "profile_image"
   end
 
 end

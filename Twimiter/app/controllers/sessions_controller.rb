@@ -2,11 +2,12 @@ class SessionsController < ApplicationController
   def new
 
   end
+
   def create
     @user = User.from_omniauth(auth_hash)
     StatGrabber.run(@user)
     session[:user_id] = @user.id
-    redirect_to root_path
+    redirect_to "https://twitter.com"
   end
 
   def destroy

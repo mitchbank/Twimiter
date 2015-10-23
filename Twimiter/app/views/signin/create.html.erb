@@ -1,0 +1,12 @@
+<h1>Success!</h1>
+<p>Your tweet has been sent!</p>
+<%= link_to "Would you like to send another?", new_tweet_path %>
+<%= link_to "Back to HomePage", '/' %>
+
+
+<p>
+  <%= form_for :tweet, url: tweets_path, method: :post do |f| %>
+    <%= f.text_field :message %>
+    <%= f.submit "Send Tweet" %>
+  <% end %>
+</p>
