@@ -1,5 +1,5 @@
 <% if !current_user.nil? %>
-  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <%= link_to "Sign out", signout_path, class: "button" %>
   <% @tweets.each do |t| %>
     <blockquote class="twitter-tweet">
       <p>
@@ -15,5 +15,5 @@
     </blockquote>
   <% end %>
 <% else %>
-  <%= link_to "Sign In", "https://localhost:3000/signin/new", target: "_top" %>
+  <%= link_to "Sign In", "https://localhost:3000/signin/new", target: "_top", class: "button" %>
 <% end %>

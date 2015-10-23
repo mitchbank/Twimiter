@@ -4,6 +4,11 @@ class HomeController < ApplicationController
    limiter = Limiter.new(params[:t_limit],params[:s_limit])
 
    @tweets = limiter.limit(current_user) if current_user
+   respond_to do |format|
+      format.html
+      format.json {render json: @tweets.to_json}
+   end
+
   end
 
   # def auto_link(text, options = {}, &block)
