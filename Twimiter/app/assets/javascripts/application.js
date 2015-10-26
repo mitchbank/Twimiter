@@ -43,17 +43,19 @@ $(document).on('ready page:load', function() {
 					// console.log(data_tweet)
 			
 				});
+				console.log('second test')
 				if (data_tweet_id != dom_tweet_id){
+					console.log('third test')
 					// data_tweet_id.prepend(new_tweets)
-					$('.container-tweets').prepend('<blockquote>' + $data_tweet + '</blockquote>');
-					console.log($data_tweet)
+					$('.container-tweets').replaceWith(data);
+					console.log('fourth test')
 				}else{
 					console.log('no new tweets to show')
 				}
 			}	
 		})
 	}
-	// 		setInterval(ajaxCall, 30000);	
+	 		setInterval(ajaxCall, 20000);	
 })
 
 
