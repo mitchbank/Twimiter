@@ -13,9 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require semantic-ui
-//= require semantic-ui/modal
-//= require semantic-ui/dropdown
 
 
 // $(document).on('ready page:load', function(){
@@ -33,11 +30,6 @@ $(document).on('ready page:load', function() {
 			url:'/home',
 			// dataType: 'json',
 			success: function(data) {
-
-				var button = document.createElement("BUTTON");
-				var load_tweets = document.createTextNode("Load New Tweets");
-				button.appendChild(load_tweets);
-				document.body.appendChild(button);
 					// console.log(data)
 				// $('.twitter-tweet').each(function(i, v) {
 				// 	dom_tweet_id = $(v).attr('id')
