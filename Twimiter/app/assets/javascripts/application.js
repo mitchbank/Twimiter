@@ -30,6 +30,7 @@ $(document).on('ready page:load', function() {
 			url:'/home',
 			// dataType: 'json',
 			success: function(data) {
+			$('.refresh-button').fadeIn();
 					// console.log(data)
 				// $('.twitter-tweet').each(function(i, v) {
 				// 	dom_tweet_id = $(v).attr('id')
@@ -47,9 +48,13 @@ $(document).on('ready page:load', function() {
 				// if (data_tweet_id != dom_tweet_id){
 				// 	console.log('third test')
 				// 	// data_tweet_id.prepend(new_tweets)
+				$('.refresh-button').on('click', function(){
+					$('.refresh-button').remove();
 					$('.sign-out').hide();
 					$(new_tweets).replaceWith(data);
 					console.log('data prepended bitch')
+				})
+
 					// console.log('fourth test')
 				// }else{
 					// console.log('no new tweets to show')
@@ -57,7 +62,7 @@ $(document).on('ready page:load', function() {
 			}
 		})
 	}
-	 		setTimeout(ajaxCall, 20000);
+	 		setTimeout(ajaxCall, 2000);
 })
 
 
