@@ -2,28 +2,6 @@ body {
   background-color: #f1f1f1;
 }
 
-.refresh-button{
-  position: fixed;
-  display: none;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  color: #BD0000;
-  border-style: solid;
-  border-color: #BD0000;
-  border-width: 2px;
-  background-color: transparent;
-  border-radius: 7px;
-  width: 100%;
-  height: 45px;
-}
-
-.refresh-button:hover {
-  border-color: #f1f1f1;
-  background-color:#BD0000;
-  color: #fff;
-}
-
 .container-tweets {
   margin-top: 30px;
 }
@@ -82,9 +60,29 @@ blockquote.twitter-tweet span {
   /*height: 100px;*/
 }
 
+.refresh-button{
+  margin-top: -7px;
+  z-index: 1;
+  position: fixed;
+  display: none;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #BD0000;
+  border-style: solid;
+  border-color: #BD0000;
+  border-width: 2px;
+  background-color: #f1f1f1;
+  border-radius: 7px;
+  width: 100%;
+  height: 45px;
+}
 
-
-
+.refresh-button:hover {
+  border-color: #f1f1f1;
+  background-color:#BD0000;
+  color: #fff;
+}
 
 
 
