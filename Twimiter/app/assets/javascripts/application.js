@@ -50,6 +50,7 @@ $(document).on('ready page:load', function() {
 				// 	// data_tweet_id.prepend(new_tweets)
 				$('.refresh-button').on('click', function(){
 					$('.refresh-button').remove();
+					$(document).scrollTop();
 					$('.sign-out').hide();
 					$(new_tweets).replaceWith(data);
 					console.log('data prepended bitch')
