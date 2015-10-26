@@ -1,9 +1,9 @@
 <% if !current_user.nil? %>
-  <button type="button" class="refresh-button">
+  <button class="ui grey basic button">
     Load New Tweets
   </button>
   <div class="sign-out">
-        <%= link_to "Sign out", signout_path, class: "button" %>
+        <%= link_to "Sign out", signout_path, class: "ui grey basic button" %>
   </div>
 <div class='container-tweets'>
   <% @tweets.each do |t| %>

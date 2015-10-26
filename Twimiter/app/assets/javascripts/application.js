@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require semantic-ui
+//= require semantic-ui/modal
+//= require semantic-ui/dropdown
 
 
 // $(document).on('ready page:load', function(){
@@ -24,15 +27,15 @@
 $(document).on('ready page:load', function() {
 	console.log('document ready!');
 		var new_tweets = $('.container-tweets')
-	function ajaxCall() {	
+	function ajaxCall() {
 		$.ajax({
 			type: 'GET',
 			url:'/home',
 			// dataType: 'json',
 			success: function(data) {
 
-				var button = document.createElement("BUTTON");        
-				var load_tweets = document.createTextNode("Load New Tweets");       
+				var button = document.createElement("BUTTON");
+				var load_tweets = document.createTextNode("Load New Tweets");
 				button.appendChild(load_tweets);
 				document.body.appendChild(button);
 					// console.log(data)
@@ -46,7 +49,7 @@ $(document).on('ready page:load', function() {
 				// 	$data_tweet = $(v) //stringify
 				// 	// console.log(data_tweet_id)
 				// 	// console.log(data_tweet)
-			
+
 				// });
 				// console.log('second test')
 				// if (data_tweet_id != dom_tweet_id){
@@ -59,10 +62,10 @@ $(document).on('ready page:load', function() {
 				// }else{
 					// console.log('no new tweets to show')
 				// }
-			}	
+			}
 		})
 	}
-	 		setTimeout(ajaxCall, 20000);	
+	 		setTimeout(ajaxCall, 20000);
 })
 
 
@@ -90,12 +93,11 @@ $(document).on('ready page:load', function() {
 	// });
 // });
 
-	
-	
+
+
 			// need to know what URL we are going to get and how we get that information
-			
-			
-				
-					
-				
-			
+
+
+
+
+
