@@ -5,6 +5,7 @@ class Limiter
 	end
 
 	def limit(user)
+		
 		timeline = user.twitter_client.home_timeline(count: 200)
 		#timeline2 = user.twitter_client.home_timeline(count: 200, max_id: timeline.last.id)
 		#timeline3 = user.twitter_client.home_timeline(count: 200, max_id: timeline2.last.id)
@@ -24,21 +25,21 @@ class Limiter
 		# => 	end
 		end
 
-		twinty_one = []
-		twinty.each do |key, value|
-			tweet_stat = TweetStat.find_by(user_id: key.id, for_date: Date.today.to_datetime)
-			if tweet_stat
-				twinty_one << value.select do |tweet|
-		 			tweet.retweet_count > tweet_stat.rt_per_tweet
-		 		end
-		  end
-		end
+		# twinty_one = []
+		# twinty.each do |key, value|
+		# 	tweet_stat = TweetStat.find_by(user_id: key.id, for_date: Date.today.to_datetime)
+		# 	if tweet_stat
+		# 		twinty_one << value.select do |tweet|
+		#  			tweet.retweet_count > tweet_stat.rt_per_tweet
+		#  		end
+		#   end
+		# end
 
-		tweets = twinty_one.flatten
+		# tweets = twinty_one.flatten
 
-		tweets.sort_by! do |tw|
-		  tw.created_at
-		end
-		tweets.reverse!
+		# tweets.sort_by! do |tw|
+		#   tw.created_at
+		# end
+		# tweets.reverse!
 	end
 end

@@ -8,10 +8,5 @@ class HomeController < ApplicationController
       format.html
       format.json {render json: @tweets.to_json}
    end
-
   end
-
-  # def auto_link(text, options = {}, &block)
-  #   auto_link_entities(text, Extractor.extract_entities_with_indices(text, :extract_url_without_protocol => false), options, &block)
-  # end
 end

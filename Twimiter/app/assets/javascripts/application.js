@@ -13,3 +13,80 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+// $(document).on('ready page:load', function(){
+
+//     $('.twitter-tweet').text(response);
+//     }
+//     $.get('twitter api URL', display_tweets);
+
+$(document).on('ready page:load', function() {
+	console.log('document ready!');
+		// var new_tweets = $('.container-tweets')
+	function ajaxCall() {	
+		$.ajax({
+			type: 'GET',
+			url:'/home',
+			dataType: 'json',
+			success: function(data) {
+					// console.log(data)
+				$('.twitter-tweet').each(function(i, v) {
+					dom_tweet_id = $(v).attr('id')
+					// console.log(dom_tweet_id)
+				});
+
+				$.each(data, function(i, v) {
+					data_tweet_id = $(v).attr('id')
+					$data_tweet = $(v) //stringify
+					// console.log(data_tweet_id)
+					// console.log(data_tweet)
+			
+				});
+				if (data_tweet_id != dom_tweet_id){
+					// data_tweet_id.prepend(new_tweets)
+					$('.container-tweets').prepend('<blockquote>' + $data_tweet + '</blockquote>');
+					console.log($data_tweet)
+				}else{
+					console.log('no new tweets to show')
+				}
+			}	
+		})
+	}
+	// 		setInterval(ajaxCall, 30000);	
+})
+
+
+
+
+
+// $(document).on('ready page:load', function (){
+// 	console.log('document ready');
+// 	var $new_tweets = $('.twitter-tweet')
+// 	// $(function() {
+// 	// 	function update() {
+// 			$.ajax({
+// 				type: 'GET',
+// 				url: '/home',
+// 				dataType: 'json',
+// 				success: function(data) {
+// 					console.log('hey');
+// 						// $.each(data, function(data) {
+// 						// $new_tweets.append('<h1>Testing</h1>');
+// 					// });
+// 				}
+				// setInterval(update, 30000);
+			// });
+		// });
+	// });
+// });
+
+	
+	
+			// need to know what URL we are going to get and how we get that information
+			
+			
+				
+					
+				
+			

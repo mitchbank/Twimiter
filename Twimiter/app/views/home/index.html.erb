@@ -1,7 +1,8 @@
 <% if !current_user.nil? %>
   <%= link_to "Sign out", signout_path, class: "button" %>
+  <div class='container-tweets'>
   <% @tweets.each do |t| %>
-    <blockquote class="twitter-tweet">
+    <blockquote class="twitter-tweet" id="<%="#{t.id}"%>">
       <p>
         <span><%= image_tag "#{t.user.profile_image_url}" %></span><b><%= link_to "#{t.user.name} @#{t.user.screen_name}", "http://www.twitter.com/#{t.user.screen_name}", target: "_blank" %></b> -
         <%= time_ago_in_words(t.created_at) %><br />
@@ -17,3 +18,4 @@
 <% else %>
   <%= link_to "Sign In", "https://localhost:3000/signin/new", target: "_top", class: "button" %>
 <% end %>
+  </div>
