@@ -3,7 +3,7 @@ body {
 }
 
 .container-tweets {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 blockquote.twitter-tweet {
@@ -60,11 +60,32 @@ blockquote.twitter-tweet span {
   /*height: 100px;*/
 }
 
-.refresh-button{
-  margin-top: -7px;
+button.refresh-button{
+  /*margin-top: -7.5px;*/
+  margin-left: 50%;
   z-index: 1;
   position: fixed;
   display: none;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #BD0000;
+  border-style: solid;
+  border-color: #BD0000;
+  border-width: 2px;
+  background-color: #f1f1f1;
+  border-radius: 7px;
+  width: 150px;
+  height: 35px;
+}
+
+button.refresh-button:hover {
+  border-color: #f1f1f1;
+  background-color:#BD0000;
+  color: #fff;
+}
+
+button.sign-out-button{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -78,12 +99,11 @@ blockquote.twitter-tweet span {
   height: 45px;
 }
 
-.refresh-button:hover {
+button.sign-out-button:hover {
   border-color: #f1f1f1;
   background-color:#BD0000;
   color: #fff;
 }
-
 
 
 
