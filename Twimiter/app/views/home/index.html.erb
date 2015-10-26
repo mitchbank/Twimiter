@@ -1,6 +1,8 @@
-<% if !current_user.nil? %>
-  <%= link_to "Sign out", signout_path, class: "button" %>
-  <div class='container-tweets'>
+  <% if !current_user.nil? %>
+  <div class="sign-out">
+        <%= link_to "Sign out", signout_path, class: "button" %>
+  </div>
+<div class='container-tweets'>
   <% @tweets.each do |t| %>
     <blockquote class="twitter-tweet" id="<%="#{t.id}"%>">
       <p>
@@ -14,8 +16,8 @@
         Retweeted: <%= t.retweet_count %> Favorited: <%= t.favorite_count %>
       </p>
     </blockquote>
-  <% end %>
+<% end %>
 <% else %>
-  <%= link_to "Sign In", "https://localhost:3000/signin/new", target: "_top", class: "button" %>
+       <%= link_to "Sign In", "https://localhost:3000/signin/new", target: "_top", class: "button" %>
 <% end %>
   </div>
