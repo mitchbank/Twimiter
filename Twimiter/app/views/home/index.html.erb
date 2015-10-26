@@ -1,4 +1,7 @@
-  <% if !current_user.nil? %>
+<% if !current_user.nil? %>
+  <button type="button" class="refresh-button">
+    Load New Tweets
+  </button>
   <div class="sign-out">
         <%= link_to "Sign out", signout_path, class: "button" %>
   </div>
