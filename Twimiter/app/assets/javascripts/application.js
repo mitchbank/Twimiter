@@ -23,39 +23,40 @@
 
 $(document).on('ready page:load', function() {
 	console.log('document ready!');
-		// var new_tweets = $('.container-tweets')
+		var new_tweets = $('.container-tweets')
 	function ajaxCall() {	
 		$.ajax({
 			type: 'GET',
 			url:'/home',
-			dataType: 'json',
+			// dataType: 'json',
 			success: function(data) {
 					// console.log(data)
-				$('.twitter-tweet').each(function(i, v) {
-					dom_tweet_id = $(v).attr('id')
-					// console.log(dom_tweet_id)
-				});
+				// $('.twitter-tweet').each(function(i, v) {
+				// 	dom_tweet_id = $(v).attr('id')
+				// 	// console.log(dom_tweet_id)
+				// });
 
-				$.each(data, function(i, v) {
-					data_tweet_id = $(v).attr('id')
-					$data_tweet = $(v) //stringify
-					// console.log(data_tweet_id)
-					// console.log(data_tweet)
+				// $.each(data, function(i, v) {
+				// 	data_tweet_id = $(v).attr('id')
+				// 	$data_tweet = $(v) //stringify
+				// 	// console.log(data_tweet_id)
+				// 	// console.log(data_tweet)
 			
-				});
-				console.log('second test')
-				if (data_tweet_id != dom_tweet_id){
-					console.log('third test')
-					// data_tweet_id.prepend(new_tweets)
-					$('.container-tweets').replaceWith(data);
-					console.log('fourth test')
-				}else{
-					console.log('no new tweets to show')
-				}
+				// });
+				// console.log('second test')
+				// if (data_tweet_id != dom_tweet_id){
+				// 	console.log('third test')
+				// 	// data_tweet_id.prepend(new_tweets)
+					$(new_tweets).prepend(data);
+					console.log('data prepended bitch')
+					// console.log('fourth test')
+				// }else{
+					// console.log('no new tweets to show')
+				// }
 			}	
 		})
 	}
-	 		setInterval(ajaxCall, 20000);	
+	 		setTimeout(ajaxCall, 20000);	
 })
 
 
