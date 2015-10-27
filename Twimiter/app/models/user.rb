@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
@@ -12,8 +13,8 @@ class User < ActiveRecord::Base
 
   def twitter_client
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = Rails.application.config.twitter_key
-      config.consumer_secret     = Rails.application.config.twitter_secret
+      config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
+      config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
       config.access_token        = oauth_token
       config.access_token_secret = oauth_secret
     end
@@ -24,12 +25,5 @@ class User < ActiveRecord::Base
     client.update(tweet)
   end
 
-  # def twitter
-  #   @client ||= Twitter::REST::Client.new do |config|
-  #     config.consumer_key        = Rails.application.config.twitter_key
-  #     config.consumer_secret     = Rails.application.config.twitter_secret
-  #     config.access_token        = token
-  #     config.access_token_secret = secret
-  #   end
-  # end
+
 end
