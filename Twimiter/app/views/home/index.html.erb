@@ -19,6 +19,6 @@
 <% end %>
   <%= button_to "Sign Out", signout_path, class: "sign-out-button", method: :get %>
 <% else %>
-   <%= button_to "Sign In", new_signin_path, form: {target: "_top"}, class: "sign-out-button", method: :get %>
+   <%= button_to "Sign In", new_signin_path, form: {target: "_top"}, class: "sign-in-button", method: :get %>
 <% end %>
   </div>
