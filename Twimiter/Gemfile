@@ -30,6 +30,8 @@ gem 'omniauth-twitter'
 # gem 'unicorn'
 gem 'figaro'
 gem 'whenever', :require => false
+gem 'thin'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development, :test do
