@@ -17,7 +17,7 @@
       </p>
     </blockquote>
 <% end %>
-  <%= button_to "Sign Out", signout_path, :class "sign-out-button" %>
+  <%= button_to "Sign Out", signout_path, class: "sign-out-button" %>
 <% else %>
   <button class="sign-out-button">
        <%= link_to "Sign In", new_signin_path, target: "_top" %>
