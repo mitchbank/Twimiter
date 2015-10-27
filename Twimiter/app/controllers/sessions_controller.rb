@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    puts auth_hash.inspect
     @user = User.from_omniauth(auth_hash)
     StatGrabber.run(@user)
     session[:user_id] = @user.id
