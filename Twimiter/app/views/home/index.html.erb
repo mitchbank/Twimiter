@@ -17,8 +17,8 @@
       </p>
     </blockquote>
 <% end %>
-        <%= link_to "<button class="sign-out-button">Sign Out</button>", signout_path %>
+        <%= link_to "<button class="sign-out-button">Sign Out</button>".html_safe, signout_path %>
 <% else %>
-       <%= link_to "<button class="sign-out-button">Sign In</button>", new_signin_path, target: "_top" %>
+       <%= link_to "<button class="sign-out-button">Sign In</button>".html_safe, new_signin_path, target: "_top" %>
 <% end %>
   </div>
