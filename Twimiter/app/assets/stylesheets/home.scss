@@ -110,9 +110,11 @@ button.sign-out-button:hover {
   color: #fff;
 }
 
-
-
-
-
+button.sign-out-button:a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
 
 

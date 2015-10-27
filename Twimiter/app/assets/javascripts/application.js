@@ -53,7 +53,7 @@ $(document).on('ready page:load', function() {
 					$(document).scrollTop(0);
 					$('.sign-out').hide();
 					$(new_tweets).replaceWith(data);
-					console.log('data prepended bitch')
+					// console.log('data prepended bitch')
 				})
 
 					// console.log('fourth test')
@@ -63,7 +63,7 @@ $(document).on('ready page:load', function() {
 			}
 		})
 	}
-	 		setTimeout(ajaxCall, 30000);
+	 		setTimeout(ajaxCall, 300000);
 })
 
 
