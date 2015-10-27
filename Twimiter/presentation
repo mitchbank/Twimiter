@@ -1,0 +1,62 @@
+Has:
+
+1 - Good evening ladies and gentlemen, hope you're all ready for a fantastic night.
+
+2 - With a quick show of hands how many people in the crowd tonight are active twitter users or were at some point active twitter users?
+
+3 - I myself was a very avid twitter user about 5 years ago but because of other social media apps gaining popularity I sort of drifted away from Twitter.
+
+4 - But also one of the main reasons I stopped using Twitter so much was because there was just too much noise, too much clutter, people going on rants and tweeting 20 times in a span of 5 minutes.
+
+5 - Another example would be a user like CNN or BBC or ESPN, great sources to get news updates but they tweet over 50 times a day and if you follow 5-6 accounts like these, you can imagine every other tweet on your home feed would be from one of these users.
+
+6 - So we came up with a brilliant idea to solve this problem.  We created an app that lets you limit how many tweets you see from each user on your home timeline.
+
+7 - We were so happy and excited that we got our app to work, but then it was brought to our attention that what if you limit a users tweets to no more than 2 tweets on your home timeline but the third tweet they posted was the most fire tweet of all time and had over 5000 retweets, it wouldn't get displayed on your feed.
+
+8 - So my good friend Mitch overhere came up with a fantastic idea to deal with that problem and I'll pass it over to him to tell you guys all about it.
+
+Mitch:
+
+1 - We created an algorithm that goes through the last 100 tweets from every user you follow, and counts up all the retweets from those 100 tweets.  and it basically creates a baseline ratio for each user of how many retweets they get for every tweet that they tweet out.
+
+2 - so now instead of getting every tweet that they write everyday you're only get the tweets that beat out that baseline ratio.
+
+3 - Therefore what we deduced is that your timeline would be more interesting to you.
+
+4 - To show you what we mean, lets take a quick look at how Twinty works.
+
+5 - show twinty.com already signed in but have twitter.com opened side by side to compare.
+
+Has:
+
+1 - Ok so that looks great but as a User we thought that having to login to Twinty.com to view the 30 most recent tweets from your Twitter timeline wasn't exactly the best user experience. So to overcome that issue we decided to create a chrome extension.
+
+2 - Login to Chrome Extension
+
+3 - Get NotJackBurum to tweet, retweet it twice
+
+4 - show the load new tweets button with Jacks tweet in there
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

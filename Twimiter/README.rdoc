@@ -12,12 +12,12 @@ MVP:
 
 Itertion 2:
 
-- As a user, I want my tweets limited for me, based on what is interesting
+√ As a user, I want my tweets limited for me, based on what is interesting
 - As a user, I want to choose keywords that I want to see
 
 Iteration 3:
 - As a user, I want my tweets to show in a hierarchy that I can choose (i.e. monday morning should show football related tweets first)
-- As a user, I want to use a browser extension on the twitter site to accomplish the same tasks
+√ As a user, I want to use a browser extension on the twitter site to accomplish the same tasks
 
 
 == README
