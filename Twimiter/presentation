@@ -8,7 +8,7 @@ Has:
 
 4 - But also one of the main reasons I stopped using Twitter so much was because there was just too much noise, too much clutter, people going on rants and tweeting 20 times in a span of 5 minutes.
 
-5 - Another example would be a user like CNN or BBC or ESPN, great sources to get news updates but they tweet over 50 times a day and if you follow 5-6 accounts like these, you can imagine every other tweet on your home feed would be from one of these users.
+5 - Another example of such clutter would be users t like CNN or BBC or ESPN, great sources to get news updates but they tweet over 50 times a day and if you follow 5-6 accounts like these, you can imagine every other tweet on your home feed would be from one of these users.
 
 6 - So we came up with a brilliant idea to solve this problem.  We created an app that lets you limit how many tweets you see from each user on your home timeline.
 
@@ -35,10 +35,17 @@ Has:
 2 - Login to Chrome Extension
 
 3 - Get NotJackBurum to tweet, retweet it twice
+    "SO GLAD I'M NOT PRESENTING, I'D BE SO NERVOUS IF I WAS THEM #WhatATimeToBeAlive #LoveYouTwinty"
 
 4 - show the load new tweets button with Jacks tweet in there
 
+Mitch:
 
+1 - next iteration - Create a toggle button
+                   - Have tweets get knocked out on twitters DOM instead of loading them in an iFrame
+                   - Create more complex algorithm with keywords (SFW, based around trending topics)
+                   - Don't show posts from certain people at certain times
+                   - Bundle all this logic in an API and use it with different social media apps (instagram, vine)
 
 
 

@@ -63,7 +63,7 @@ $(document).on('ready page:load', function() {
 			}
 		})
 	}
-	 		setTimeout(ajaxCall, 120000);
+	 		setTimeout(ajaxCall, 300000);
 })
 
 
